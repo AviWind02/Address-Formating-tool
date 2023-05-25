@@ -38,6 +38,8 @@ This project is licensed under the [MIT License](LICENSE).
 - [Microsoft Office Interop API](https://docs.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word)
 - [CSV file format](https://en.wikipedia.org/wiki/Comma-separated_values)
 
-##Files used in testing.  
+## Files used in testing
+
 - [Test.CSV](https://github.com/AviWind02/Address-Formating-tool/files/11569396/Test.CSV)
 - [CompanyInfo.docx](https://github.com/AviWind02/Address-Formating-tool/files/11569458/CompanyInfo.docx)
+
