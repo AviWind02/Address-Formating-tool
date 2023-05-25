@@ -1,5 +1,12 @@
 # Address Format
 
+## Output
+
+- [CompanyInfo.docx](https://github.com/AviWind02/Address-Formating-tool/files/11569458/CompanyInfo.docx)
+
+![image](https://github.com/AviWind02/Address-Formating-tool/assets/59033172/623464a9-f7ab-4cd5-9cf9-81b1da5b6bee)
+
+
 Address Format is a C# console application that reads data from a CSV file containing company address information and generates a Word document with a formatted table of the addresses.
 
 ## Prerequisites
@@ -41,5 +48,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## Files used in testing
 
 - [Test.CSV](https://github.com/AviWind02/Address-Formating-tool/files/11569480/Test.CSV)
-- [CompanyInfo.docx](https://github.com/AviWind02/Address-Formating-tool/files/11569458/CompanyInfo.docx)
+
 
