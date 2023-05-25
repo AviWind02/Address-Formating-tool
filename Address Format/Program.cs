@@ -41,9 +41,9 @@ namespace Address_Format
         static void Main(string[] args)
         {
             // Specify the CSV file path
-            Console.WriteLine("Enter a file path for the CSV file.");
+            Console.WriteLine("Enter a file path for the CSV file. (C:\\Filename.csv)");
             string filePath = Console.ReadLine();
-            Console.WriteLine("Enter a file path for exit word file.");
+            Console.WriteLine("Enter a file path for exit word file. (C:\\Filename.docx)");
             string filePathword = Console.ReadLine();
             //string filePath = @"D:\Test.CSV";//Testing
 
@@ -121,7 +121,7 @@ namespace Address_Format
                 }
             } while (!isFileValid);
             Debug.WriteLine("Created by Avi.");
-            Debug.WriteLine("GitHub: ");
+            Debug.WriteLine("GitHub: https://github.com/AviWind02/Address-Formating-tool");
             Debug.WriteLine("Click enter to close.");
             Console.ReadLine();
         }
