@@ -29,6 +29,7 @@ SOFTWARE.
 using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 
 namespace Address_Format.Class
@@ -46,11 +47,6 @@ namespace Address_Format.Class
             wordDoc.PageSetup.Orientation = WdOrientation.wdOrientPortrait;
             wordDoc.PageSetup.PageWidth = wordApp.MillimetersToPoints(210f);   // A4 width in mm
             wordDoc.PageSetup.PageHeight = wordApp.MillimetersToPoints(297f);  // A4 height in mm
-            wordDoc.PageSetup.LeftMargin = 0;
-            wordDoc.PageSetup.RightMargin = 0;
-            wordDoc.PageSetup.TopMargin = 0;
-            wordDoc.PageSetup.BottomMargin = 0;
-
             // Set the margins
             wordDoc.PageSetup.TopMargin = wordApp.MillimetersToPoints(15.1f);   // 1.51cm
             wordDoc.PageSetup.BottomMargin = wordApp.MillimetersToPoints(13f);   // 1.3cm
@@ -58,6 +54,8 @@ namespace Address_Format.Class
             wordDoc.PageSetup.RightMargin = wordApp.MillimetersToPoints(7.9f);   // 0.79cm
             wordDoc.PageSetup.Gutter = 0;
             wordDoc.PageSetup.GutterPos = WdGutterStyle.wdGutterPosLeft;
+
+
 
             // Calculate the number of rows and columns based on the companyList size
             int rowCount = (int)Math.Ceiling((double)companyList.Count / 3);
@@ -84,6 +82,8 @@ namespace Address_Format.Class
             table.Borders.OutsideColor = WdColor.wdColorWhite;
             table.Borders.InsideColor = WdColor.wdColorWhite;
 
+
+
             // Populate the table with company information
             int companyIndex = 0;
             for (int row = 1; row <= rowCount; row++)
@@ -96,7 +96,9 @@ namespace Address_Format.Class
 
                         // Create a new cell range and apply formatting
                         Range cellRange = table.Cell(row, column).Range;
-                        cellRange.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
+
+                        // Set horizontal alignment to center
+                        cellRange.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
 
                         // Insert the company information into the cell
                         cellRange.Text = $"{companyInfo.CompanyName}\n" +

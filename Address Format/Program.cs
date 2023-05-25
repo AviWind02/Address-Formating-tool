@@ -41,7 +41,7 @@ namespace Address_Format
         static void Main(string[] args)
         {
             // Specify the CSV file path
-            Console.WriteLine("Enter a file path:");
+            Console.WriteLine("Enter a file path like D:\\Test.CSV");
             string filePath = Console.ReadLine();
             //string filePath = @"D:\Test.CSV";//Testing
 
