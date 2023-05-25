@@ -41,8 +41,10 @@ namespace Address_Format
         static void Main(string[] args)
         {
             // Specify the CSV file path
-            Console.WriteLine("Enter a file path like D:\\Test.CSV");
+            Console.WriteLine("Enter a file path for the CSV file.");
             string filePath = Console.ReadLine();
+            Console.WriteLine("Enter a file path for exit word file.");
+            string filePathword = Console.ReadLine();
             //string filePath = @"D:\Test.CSV";//Testing
 
             bool isFileValid = false;
@@ -73,19 +75,21 @@ namespace Address_Format
 
                                 // Split the line into parts using comma as the delimiter
                                 string[] parts = line.Split(',');
-
-                                // Create a new CompanyInfo object and assign values to its properties
-                                CompanyInfo Companyinfo = new CompanyInfo()
+                                if (parts.Length >= 5)
                                 {
-                                    CompanyName = parts[0].Trim('"'),
-                                    AddressLine1 = parts[1].Trim('"'),
-                                    AddressLine2 = parts[2].Trim('"'),
-                                    County = parts[3].Trim('"'),
-                                    PostalCode = parts[4].Trim('"')
-                                };
+                                    // Create a new CompanyInfo object and assign values to its properties
+                                    CompanyInfo Companyinfo = new CompanyInfo()
+                                    {
+                                        CompanyName = parts[0].Trim('"'),
+                                        AddressLine1 = parts[1].Trim('"'),
+                                        AddressLine2 = parts[2].Trim('"'),
+                                        County = parts[3].Trim('"'),
+                                        PostalCode = parts[4].Trim('"')
+                                    };
+                                    companyList.Add(Companyinfo);
 
+                                }
                                 // Add the CompanyInfo object to the list
-                                companyList.Add(Companyinfo);
                             }
                         }
                         Console.WriteLine("Reading Data in Object");
@@ -103,7 +107,7 @@ namespace Address_Format
 
                         // Create Word document
                         Console.WriteLine("Creating Doc. This can take up to 1 min...");
-                        creatingwordfile.CreateWordDocument(companyList, "D:\\CompanyInfo.docx");
+                        creatingwordfile.CreateWordDocument(companyList, filePathword);
                         Console.WriteLine("Word document created successfully.");
                     }
                     catch (IOException e)
